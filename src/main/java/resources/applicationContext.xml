@@ -3,12 +3,12 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-<bean id = "myAccount" class = "com.ps.springm1.model.SavingAccount"> 
+<bean id = "myAccount" class = "com.ps.springm1.model.SavingAccount" scope="prototype"> 
 <constructor-arg ref = "myCard" />
 </bean>
 
-<bean id = "curAccount" class = "com.ps.springm1.model.CurrentAccount"> 
-<property name="creditCard" ref = "creditCard" />
+<bean id = "curAccount" class = "com.ps.springm1.model.CurrentAccount" autowire = "byName"> 
+<!-- <property name="creditCard" ref = "creditCard" /> -->
 </bean>
 
 <bean id = "myCard" class = "com.ps.springm1.model.ATMCard" />

@@ -14,11 +14,13 @@ public class MyBankApp {
 		System.out.println(curAcc.createAccount());*/
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("/resources/applicationContext.xml");
 		Account acc = context.getBean("myAccount",Account.class);
-		System.out.println(acc.createAccount());
+		Account acc2 = context.getBean("myAccount",Account.class);
+		System.out.println("Account 1 = Account 2 : " + (acc == acc2));
+		/*System.out.println(acc.createAccount());
 		System.out.println(acc.cardDetails());
 		
 		Account cur = context.getBean("curAccount",Account.class);
 		System.out.println(cur.createAccount());
-		System.out.println(cur.cardDetails());
+		System.out.println(cur.cardDetails());*/
 	}
 }
